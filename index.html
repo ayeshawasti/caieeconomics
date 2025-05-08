@@ -7,23 +7,24 @@
   <style>
     :root {
       --bg: #ffffff;
-      --primary: #2d3436;
-      --accent: #0984e3;
-      --muted: #636e72;
-      --shadow: rgba(0, 0, 0, 0.1);
-      --radius: 10px;
+      --text: #333333;
+      --accent: #2a9d8f;
+      --accent-light: #e9f5f2;
+      --muted: #777777;
+      --radius: 12px;
+      --shadow: rgba(0, 0, 0, 0.05);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f2f5;
-      color: var(--primary);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--accent-light);
+      color: var(--text);
       display: flex;
       justify-content: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
     .dashboard {
-      max-width: 960px;
+      max-width: 1000px;
       width: 100%;
     }
     .header {
@@ -31,34 +32,31 @@
       margin-bottom: 2rem;
     }
     .header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: var(--accent);
-      margin-bottom: 0.5rem;
     }
     .nav-buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
       margin-top: 1rem;
     }
     .btn {
       background: var(--accent);
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: var(--radius);
       text-decoration: none;
-      font-weight: 500;
-      box-shadow: 0 4px 8px var(--shadow);
+      font-weight: 600;
+      box-shadow: 0 2px 6px var(--shadow);
       transition: background 0.3s;
     }
-    .btn:hover {
-      background: #0570b5;
-    }
+    .btn:hover { background: #21867a; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 24px;
     }
     .card {
       background: var(--bg);
@@ -67,36 +65,38 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s;
     }
+    .card:hover { transform: translateY(-4px); }
     .card-header {
       background: var(--accent);
       color: #fff;
-      padding: 16px;
-      font-size: 1.2rem;
-      font-weight: 600;
+      padding: 20px;
+      font-size: 1.3rem;
+      font-weight: 700;
     }
     .card-content {
-      padding: 16px;
+      padding: 20px;
       flex: 1;
-      overflow-y: auto;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
     }
-    .list-custom {
-      list-style: none;
-      padding-left: 0;
-    }
+    .list-custom { list-style: none; padding-left: 0; }
     .list-custom li {
       position: relative;
-      padding-left: 1.5em;
-      margin-bottom: 0.75em;
+      padding-left: 1.6em;
+      margin-bottom: 0.8em;
+      color: var(--text);
     }
     .list-custom li:before {
-      content: '•';
+      content: '';
       position: absolute;
       left: 0;
-      color: var(--accent);
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
     }
   </style>
 </head>
@@ -116,11 +116,11 @@
         <div class="card-header">Quick Tips & Mindset Hacks</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>AO1:30%, AO2:35%, AO3:35% – keep this ratio balanced.</li>
-            <li>Time Blocks: Section A – 30min, B – 45min, C – 45min.</li>
-            <li>Formula Cheat Sheet: PED, YED, multiplier, MPC, MPS.</li>
-            <li>Mindset Ritual: 5 deep breaths & affirmation “I’ve got this”.</li>
-            <li>Pre-Exam: 7–8 hours sleep, protein breakfast, 10-min review.</li>
+            <li>Balance AO: AO1 (30%), AO2 (35%), AO3 (35%).</li>
+            <li>Time: Section A – 30min; B – 45min; C – 45min.</li>
+            <li>Formula stash: PED, YED, multiplier (1/1-MPC), elasticity formulas.</li>
+            <li>Ritual: 5 deep breaths & “I’ve got this” mantra.</li>
+            <li>Pre-exam: 7–8h sleep, protein breakfast, 10-min light review.</li>
           </ul>
         </div>
       </div>
@@ -128,13 +128,13 @@
         <div class="card-header">Section A: Data Response</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>Read & annotate question: underline keywords and data.</li>
-            <li>Define 2–3 terms using syllabus definitions.</li>
-            <li>Quote figures & calculate % changes.</li>
-            <li>Draw diagram: label shifts, equilibrium, areas.</li>
-            <li>Analysis: “Because… therefore… leading to…” chains.</li>
-            <li>Evaluation: 3 bullet points on data limits & assumptions.</li>
-            <li>Link back: summarize welfare & efficiency impact.</li>
+            <li>Step 1: Read & annotate—underline keywords & data trends.</li>
+            <li>Step 2: Define 2–3 key terms (exact syllabus language).</li>
+            <li>Step 3: Quote figures & calculate % changes precisely.</li>
+            <li>Step 4: Draw annotated diagram—shifts, equilibrium, welfare areas.</li>
+            <li>Step 5: Analysis chain—“Because … therefore … leading to …”.</li>
+            <li>Step 6: Evaluation—3 bullets: data limits, assumptions, alt factors.</li>
+            <li>Step 7: Link back—summarize welfare/equity impact.</li>
           </ul>
         </div>
       </div>
@@ -142,12 +142,12 @@
         <div class="card-header">Section B: Micro Essays</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>Structure: Intro → Diagram → Analysis → Evaluation → Conclusion.</li>
-            <li>Intro starters: “This essay examines…”, “Economists define…”.</li>
-            <li>Key diagrams: tax, subsidy, PED, producer/consumer surplus.</li>
-            <li>Analysis tip: integrate real-world examples (e.g., subsidy removal).</li>
-            <li>Eval phrases: “However…”, “Alternatively…”, “A possible drawback…”.</li>
-            <li>Conclusion: weigh pros & cons, deliver final judgment.</li>
+            <li>Structure: Intro → Diagram → Analysis → Eval → Conclusion.</li>
+            <li>Intro starters: “This essay examines …”, “Economists define …”.</li>
+            <li>Key diagrams: tax incidence, subsidy, PED curves.</li>
+            <li>Analysis: link theory to real-world (e.g., market intervention). </li>
+            <li>Eval phrases: “However …”, “Alternatively …”, “A possible drawback …”.</li>
+            <li>Conclusion: succinctly weigh pros & cons.</li>
           </ul>
         </div>
       </div>
@@ -155,12 +155,12 @@
         <div class="card-header">Section C: Macro Essays</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>Key chain: ↑G → ↑AD → ↑Y by multiplier (1/(1-MPC)).</li>
-            <li>Context: political delays, import leakages, informal sector.</li>
-            <li>Diagrams: AD/AS shifts, Keynesian LRAS, multiplier graph.</li>
-            <li>Eval bank: time lags, crowding out, debt sustainability.</li>
-            <li>Global factors: commodity price shocks, exchange rate volatility.</li>
-            <li>Conclusion: compare policies & recommend based on context.</li>
+            <li>Chain: ↑Govt spending → ↑AD → ↑Y by multiplier (1/(1-MPC)).</li>
+            <li>Context: political lag, import leakages, informal sector.</li>
+            <li>Diagrams: AD/AS shifts, Keynesian LRAS.</li>
+            <li>Eval: time lags, crowding out, debt sustainability.</li>
+            <li>Global: commodity price shocks, exchange rate changes.</li>
+            <li>Conclusion: compare policies & recommend per context.</li>
           </ul>
         </div>
       </div>
