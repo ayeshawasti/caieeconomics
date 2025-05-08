@@ -5,115 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Economics May–June 2025 Dashboard</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Helvetica Neue',Arial,sans-serif;background:#f9fafb;color:#2d3436;padding:20px;}
-    h1{text-align:center;font-size:2rem;margin-bottom:1rem;color:#0984e3;}
-    .container{max-width:900px;margin:0 auto;}
-    .top-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem;}
-    .resource-btn{padding:8px 16px;background:#00b894;color:#fff;border-radius:6px;text-decoration:none;font-size:0.9rem;transition:0.3s;}
-    .resource-btn:hover{background:#019875;}
-    .section{background:#fff;border:1px solid #dfe6e9;border-radius:6px;margin-bottom:1rem;}
-    .section-header{cursor:pointer;padding:12px 16px;background:#74b9ff;color:#fff;display:flex;justify-content:space-between;align-items:center;}
-    .section-content{display:none;padding:12px 16px;font-size:0.9rem;line-height:1.4;}
-    ul,ol{margin-left:1.2rem;margin-bottom:0.8rem;}
-    li{margin-bottom:0.5rem;}
-    .toggle-icon{transition:transform 0.3s;}
+    :root {
+      --bg: #ffffff;
+      --primary: #2d3436;
+      --accent: #0984e3;
+      --muted: #636e72;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: var(--primary);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .dashboard {
+      max-width: 960px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 8px var(--shadow);
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0570b5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .card-content {
+      padding: 16px;
+      flex: 1;
+      overflow-y: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .list-custom {
+      list-style: none;
+      padding-left: 0;
+    }
+    .list-custom li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 0.75em;
+    }
+    .list-custom li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Economics May–June 2025</h1>
-    <div class="top-buttons">
-      <a href="https://drive.google.com/drive/folders/1z6c0AJAedy1T64THTDQWnolHSXjZxEiV?usp=drive_link" target="_blank" class="resource-btn">Sample Answers</a>
-      <a href="https://drive.google.com/file/d/1nYZXMG9httaHf9T2yBM5iKp2STwKMCvh/view?usp=drive_link" target="_blank" class="resource-btn">Notes</a>
-      <a href="https://drive.google.com/file/d/1K8fM4qbkVnRKm1_Ccn4v4mN_cHdrgZLv/view?usp=drive_link" target="_blank" class="resource-btn">Essay Template</a>
-      <a href="https://drive.google.com/drive/folders/11k2UoHnWWr4bpC7z5QS3xZJMM2USkfbH?usp=drive_link" target="_blank" class="resource-btn">Resource Drive</a>
-    </div>
-
-    <div class="section" id="sec1">
-      <div class="section-header">
-        <span>1. Quick Tips & Mindset Hacks</span><span class="toggle-icon">&#9654;</span>
-      </div>
-      <div class="section-content">
-        <ul>
-          <li><strong>AO Breakdown:</strong> AO1=30%, AO2=35%, AO3=35%</li>
-          <li><strong>Time Slots:</strong> A:30min | B:45min | C:45min</li>
-          <li><strong>Formula Cheat:</strong> Keep list of 5 key formulas on sticky note (PED, YED, multiplier)</li>
-          <li><strong>Diagram Hack:</strong> Draw curves lightly then darken; label axes before writing text</li>
-          <li><strong>Common Pitfalls:</strong> forgetting definitions, skipping evaluation, unlabeled diagrams</li>
-          <li><strong>Exam Routine:</strong> Sleep well, light review morning-of, protein breakfast</li>
-          <li><strong>Mindset:</strong> Visualize success—5 deep breaths before each section; positive affirmations</li>
-          <li><strong>Quick Drill:</strong> 20-min mini essay: random micro topic → intro+diagram + 2 eval points</li>
-          <li><strong>Last Check:</strong> 5-min glance at command words and syllabus terms before writing</li>
-        </ul>
+  <div class="dashboard">
+    <div class="header">
+      <h1>Economics May–June 2025</h1>
+      <div class="nav-buttons">
+        <a href="https://drive.google.com/drive/folders/1z6c0AJAedy1T64THTDQWnolHSXjZxEiV?usp=drive_link" target="_blank" class="btn">Sample Answers</a>
+        <a href="https://drive.google.com/file/d/1nYZXMG9httaHf9T2yBM5iKp2STwKMCvh/view?usp=drive_link" target="_blank" class="btn">Notes</a>
+        <a href="https://drive.google.com/file/d/1K8fM4qbkVnRKm1_Ccn4v4mN_cHdrgZLv/view?usp=drive_link" target="_blank" class="btn">Essay Template</a>
+        <a href="https://drive.google.com/drive/folders/11k2UoHnWWr4bpC7z5QS3xZJMM2USkfbH?usp=drive_link" target="_blank" class="btn">Resource Drive</a>
       </div>
     </div>
-
-    <div class="section" id="sec2">
-      <div class="section-header">
-        <span>2. Section A: Data Response</span><span class="toggle-icon">&#9654;</span>
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">Quick Tips & Mindset Hacks</div>
+        <div class="card-content">
+          <ul class="list-custom">
+            <li>AO1:30%, AO2:35%, AO3:35% – keep this ratio balanced.</li>
+            <li>Time Blocks: Section A – 30min, B – 45min, C – 45min.</li>
+            <li>Formula Cheat Sheet: PED, YED, multiplier, MPC, MPS.</li>
+            <li>Mindset Ritual: 5 deep breaths & affirmation “I’ve got this”.</li>
+            <li>Pre-Exam: 7–8 hours sleep, protein breakfast, 10-min review.</li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ol>
-          <li><strong>Read & Annotate:</strong> underline command, data trends, context clues</li>
-          <li><strong>Define Terms:</strong> 1-2 lines using exact syllabus wording</li>
-          <li><strong>Apply Data:</strong> quote figures ("sales rose 15% from X to Y"), calculate % change</li>
-          <li><strong>Diagram/Table:</strong> label shifts, equilibrium, area of welfare change</li>
-          <li><strong>Analysis:</strong> cause→effect chains: "Because price fell…, therefore demand…"</li>
-          <li><strong>Evaluation:</strong> 3 bullet points: data limitations, ceteris paribus, alternative factors</li>
-          <li><strong>Link Back:</strong> summarise net effect on welfare, equity, efficiency</li>
-        </ol>
-        <p><em>Model Evaluation Bank:</em></p>
-        <ul>
-          <li>Data is a snapshot; may not show long-run trends</li>
-          <li>Elasticity may change over different price ranges</li>
-          <li>Other market forces (taxes, subsidies) could alter outcomes</li>
-        </ul>
+      <div class="card">
+        <div class="card-header">Section A: Data Response</div>
+        <div class="card-content">
+          <ul class="list-custom">
+            <li>Read & annotate question: underline keywords and data.</li>
+            <li>Define 2–3 terms using syllabus definitions.</li>
+            <li>Quote figures & calculate % changes.</li>
+            <li>Draw diagram: label shifts, equilibrium, areas.</li>
+            <li>Analysis: “Because… therefore… leading to…” chains.</li>
+            <li>Evaluation: 3 bullet points on data limits & assumptions.</li>
+            <li>Link back: summarize welfare & efficiency impact.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div class="section" id="sec3">
-      <div class="section-header">
-        <span>3. Section B: Micro Essays</span><span class="toggle-icon">&#9654;</span>
+      <div class="card">
+        <div class="card-header">Section B: Micro Essays</div>
+        <div class="card-content">
+          <ul class="list-custom">
+            <li>Structure: Intro → Diagram → Analysis → Evaluation → Conclusion.</li>
+            <li>Intro starters: “This essay examines…”, “Economists define…”.</li>
+            <li>Key diagrams: tax, subsidy, PED, producer/consumer surplus.</li>
+            <li>Analysis tip: integrate real-world examples (e.g., subsidy removal).</li>
+            <li>Eval phrases: “However…”, “Alternatively…”, “A possible drawback…”.</li>
+            <li>Conclusion: weigh pros & cons, deliver final judgment.</li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul>
-          <li><strong>Essay Structure:</strong> Intro → Diagram → Analysis → Evaluation → Conclusion</li>
-          <li><strong>Intro Starters:</strong> “This essay examines…”, “Economists define… as…”</li>
-          <li><strong>Key Diagrams:</strong> tax incidence, subsidy, PED curves, consumer/producer surplus</li>
-          <li><strong>Analysis Tips:</strong> use real-world examples (e.g., Pakistan fuel price cap)</li>
-          <li><strong>Evaluation Bank:</strong> ceteris paribus caveat; equity vs efficiency; admin costs; black market risk</li>
-          <li><strong>Linking Phrases:</strong> “Furthermore…”, “However…”, “Consequently…”</li>
-          <li><strong>Conclusion:</strong> succinctly weigh pros vs cons and state overall effect</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section" id="sec4">
-      <div class="section-header">
-        <span>4. Section C: Macro Essays</span><span class="toggle-icon">&#9654;</span>
-      </div>
-      <div class="section-content">
-        <ul>
-          <li><strong>Key Chains:</strong> “↑Govt spending→↑AD→↑Y by multiplier (multiplier=1/(1-MPC))”</li>
-          <li><strong>Contextual Points:</strong> political lag in Pakistan; import leakages; informal sector</li>
-          <li><strong>Diagrams:</strong> AD/AS shifts, Keynesian LRAS, multiplier diagram</li>
-          <li><strong>Evaluation Bank:</strong> time lags; crowding out; debt sustainability; liquidity trap</li>
-          <li><strong>Global Links:</strong> impact of global commodity prices, exchange rate shocks</li>
-          <li><strong>Conclusion:</strong> compare policies and recommend most effective in given context</li>
-        </ul>
+      <div class="card">
+        <div class="card-header">Section C: Macro Essays</div>
+        <div class="card-content">
+          <ul class="list-custom">
+            <li>Key chain: ↑G → ↑AD → ↑Y by multiplier (1/(1-MPC)).</li>
+            <li>Context: political delays, import leakages, informal sector.</li>
+            <li>Diagrams: AD/AS shifts, Keynesian LRAS, multiplier graph.</li>
+            <li>Eval bank: time lags, crowding out, debt sustainability.</li>
+            <li>Global factors: commodity price shocks, exchange rate volatility.</li>
+            <li>Conclusion: compare policies & recommend based on context.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelectorAll('.section-header').forEach(h=>{
-      h.addEventListener('click',()=>{
-        let content=h.nextElementSibling,icon=h.querySelector('.toggle-icon');
-        if(content.style.display==='block'){content.style.display='none';icon.style.transform='rotate(0deg)';}
-        else{content.style.display='block';icon.style.transform='rotate(90deg)';}
-      });
-    });
-  </script>
 </body>
 </html>
