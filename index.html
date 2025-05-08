@@ -8,47 +8,38 @@
     :root {
       --bg: #ffffff;
       --text: #333333;
-      --orange: #f08a5d;
-      --teal: #2a9d8f;
-      --pink: #ff9aa2;
-      --red: #ff595e;
-      --muted: #777777;
       --radius: 12px;
       --shadow: rgba(0, 0, 0, 0.05);
+      --gradient-orange: linear-gradient(135deg, #f08a5d, #ffae74);
+      --gradient-teal: linear-gradient(135deg, #2a9d8f, #72c2a5);
+      --gradient-pink: linear-gradient(135deg, #ff9aa2, #ffb3c1);
+      --gradient-red: linear-gradient(135deg, #ff595e, #ff7b7d);
+      --btn-gradient: linear-gradient(135deg, #2a9d8f, #f08a5d);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #f7f7f7;
+      background: #f0f2f5;
       color: var(--text);
       display: flex;
       justify-content: center;
       padding: 40px 20px;
     }
-    .dashboard {
-      max-width: 1000px;
-      width: 100%;
-    }
+    .dashboard { max-width: 1000px; width: 100%; }
     .header { text-align: center; margin-bottom: 2rem; }
-    .header h1 { font-size: 2.8rem; color: var(--teal); }
-    .nav-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 1rem;
-    }
+    .header h1 { font-size: 2.8rem; background: var(--gradient-teal); -webkit-background-clip: text; color: transparent; }
+    .nav-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 1rem; }
     .btn {
-      background: var(--teal);
+      background: var(--btn-gradient);
       color: #fff;
       padding: 12px 24px;
       border-radius: var(--radius);
       text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 2px 6px var(--shadow);
-      transition: background 0.3s;
+      box-shadow: 0 4px 8px var(--shadow);
+      transition: opacity 0.3s;
     }
-    .btn:hover { background: #22707a; }
+    .btn:hover { opacity: 0.85; }
     .grid {
       display: flex;
       gap: 24px;
@@ -66,29 +57,21 @@
     }
     .card:hover { transform: translateY(-4px); }
     .card-header {
-      color: #fff;
       padding: 20px;
       font-size: 1.3rem;
       font-weight: 700;
+      color: #fff;
+      background-size: 200% 200%;
     }
-    .card-header.orange { background: var(--orange); }
-    .card-header.teal { background: var(--teal); }
-    .card-header.pink { background: var(--pink); }
-    .card-header.red { background: var(--red); }
-    .card-content {
-      padding: 20px;
-      flex: 1;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+    .card-header.orange { background: var(--gradient-orange); }
+    .card-header.teal { background: var(--gradient-teal); }
+    .card-header.pink { background: var(--gradient-pink); }
+    .card-header.red { background: var(--gradient-red); }
+    .card-content { padding: 20px; flex: 1; font-size: 1rem; line-height: 1.6; }
     .list-custom { list-style: none; padding-left: 0; }
-    .list-custom li {
-      position: relative;
-      padding-left: 1.6em;
-      margin-bottom: 0.8em;
-    }
+    .list-custom li { position: relative; padding-left: 1.8em; margin-bottom: 0.8em; }
     .list-custom li:before {
-      content: '🎯';
+      content: '🌟';
       position: absolute;
       left: 0;
       top: 2px;
@@ -112,9 +95,9 @@
         <div class="card-content">
           <ul class="list-custom">
             <li>Balance AO: AO1=30%, AO2=35%, AO3=35%.</li>
-            <li>Time Slots: A=30min, B=45min, C=45min.</li>
+            <li>Time: A=30min, B=45min, C=45min.</li>
             <li>Formula stash: PED, YED, elasticity types.</li>
-            <li>Mindset Ritual: 5 deep breaths & “I’ve got this!”.</li>
+            <li>Mindset: 5 deep breaths & “I’ve got this!”.</li>
             <li>Pre-exam: 7–8h sleep, protein breakfast.</li>
           </ul>
         </div>
@@ -123,12 +106,12 @@
         <div class="card-header teal">📊 Section A: Data Response</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>Read & annotate: underline keywords & data.</li>
-            <li>Define 2–3 terms using syllabus defs.</li>
+            <li>Read & annotate: underline key data.</li>
+            <li>Define 2–3 terms (exact syllabus language).</li>
             <li>Quote figures & calculate % changes.</li>
-            <li>Draw diagram: shifts, equilibrium, welfare.</li>
-            <li>Analysis chain: “Because … therefore …”.</li>
-            <li>Evaluation: 3 bullets on data limits & alt factors.</li>
+            <li>Draw diagrams: shifts, equilibrium, welfare.</li>
+            <li>Analysis: “Because … therefore …”.</li>
+            <li>Eval: 3 bullets on limits & alt factors.</li>
           </ul>
         </div>
       </div>
@@ -137,10 +120,10 @@
         <div class="card-content">
           <ul class="list-custom">
             <li>Structure: Intro → Diagram → Analysis → Eval → Conclusion.</li>
-            <li>Intro Starters: “This essay examines …”.</li>
-            <li>Key diagrams: tax incidence, subsidy, PED curves.</li>
-            <li>Analysis: link to real-world examples.</li>
-            <li>Eval Phrases: “However …”, “Alternatively …”.</li>
+            <li>Starters: “This essay examines …”.</li>
+            <li>Diagrams: tax, subsidy, PED curves.</li>
+            <li>Examples: apply real-world scenarios.</li>
+            <li>Eval: “However …”, “Alternatively …”.</li>
           </ul>
         </div>
       </div>
@@ -148,10 +131,10 @@
         <div class="card-header red">💡 Section C: Macro Essays</div>
         <div class="card-content">
           <ul class="list-custom">
-            <li>Chain: government spending increases AD.</li>
-            <li>Context: political delays, import leakages.</li>
+            <li>Chain: govt spending → AD ↑ → output ↑.</li>
+            <li>Context: political lag, import leakages.</li>
             <li>Diagrams: AD/AS shifts.</li>
-            <li>Evaluation: time lags, alternative policies.</li>
+            <li>Eval: time lags, alternative policies.</li>
             <li>Global: commodity price shocks.</li>
           </ul>
         </div>
